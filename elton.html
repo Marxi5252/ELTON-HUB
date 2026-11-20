@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elton City Hub</title>
+    
+    <!-- Instant Auth Guard -->
+    <script>
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'elton_login.html';
+        }
+    </script>
+
+    <link rel="stylesheet" href="elton .css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="bg-blur"></div>
+
+    <!-- Floating Cart Button -->
+
+
+    <div class="container">
+        <!-- Hero Header -->
+        <header class="hero">
+            <span class="badge">Official Hub</span>
+            <h1>ELTON CITY HUB</h1>
+            <p class="tagline">Take the best choice.</p>
+            
+            <div id="userProfile" class="user-profile">
+                <span>Logged in as: <strong id="userHandleDisplay">Member</strong></span>
+                <button id="logoutBtn" class="btn-secondary">Logout</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="grid-layout">
+            
+            <!-- Card 1: Category Filters & Search -->
+            <div class="card full-width">
+                <div class="card-header">
+                    <h2>01. Shop & Filter Catalog</h2>
+                    <p>Browse rolling papers, grinders, pre-rolls, and accessories:</p>
+                </div>
+                <div class="filter-toolbar">
+                    <div class="filter-pills">
+                        <button class="filter-btn active" data-filter="all">All Items</button>
+                        <button class="filter-btn" data-filter="papers">Rolling Papers</button>
+                        <button class="filter-btn" data-filter="grinders">Grinders</button>
+                        <button class="filter-btn" data-filter="prerolls">Pre-Rolls & Herb</button>
+                        <button class="filter-btn" data-filter="instock">In Stock Only</button>
+                    </div>
+                    <div class="search-wrapper">
+                        <input type="text" id="strainSearch" placeholder="Search products by name..." autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Product Gallery Grid (All 10 Uploaded Images) -->
+            <div class="card full-width">
+                <div class="card-header">
+                    <h2>02. Featured Products</h2>
+                    <p>Click any product to view details or add directly to your cart.</p>
+                </div>
+
+                <div class="products-grid">
+
+                    <!-- Product 1: Roll of it Display Box -->
+                    <div class="product-card"
+                         data-id="prod-1"
+                         data-category="papers"
+                         data-stock="in"
+                         data-name="Roll of It - Regular Box"
+                         data-price="4.99"
+                         data-price-label="$4.99 / pack"
+                         data-img="images/29977099_NjIwLTYyMC1iYjg5ZjU5ZjM0.webp"
+                         data-desc="Classic red regular size rolling papers for a smooth, slow burn. 60 leaves per pack, available in single packs or full display boxes.">
+                        <div class="product-img-wrap">
+                            <img src="images/29977099_NjIwLTYyMC1iYjg5ZjU5ZjM0.webp" alt="Roll of it Regular Size">
+                            <span class="stock-badge in-stock">● ON STOCK</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-price">$4.99 <span>/ pack</span></div>
+                            <h3>Roll of It - Regular Size</h3>
+                            <p class="product-desc">Classic red regular size rolling papers for a smooth, slow burn. 60 leaves per pack.</p>
+                            <button class="btn-primary btn-cart-add">🛒 Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2: Classic King Pre-Roll -->
+                    <div class="product-card"
+                         data-id="prod-2"
+                         data-category="prerolls"
+                         data-stock="in"
+                         data-name="Classic King Pre-Roll"
+                         data-price="12.00"
+                         data-price-label="$12.00 / each"
+                         data-img="images/default-preroll.jpeg"
+                         data-desc="Hand-packed single king-size pre-roll crafted with unbleached paper and a sturdy filter tip for an even draw.">
+                        <div class="product-img-wrap">
+                            <img src="images/default-preroll.jpeg" alt="Classic King Pre-Roll">
+                            <span class="stock-badge in-stock">● ON STOCK</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-price">$12.00 <span>/ each</span></div>
+                            <h3>Classic King Pre-Roll</h3>
+                            <p class="product-desc">Hand-packed single king-size pre-roll with unbleached paper and firm filter tip.</p>
+                            <button class="btn-primary btn-cart-add">🛒 Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3: LIT Metallic 4-Piece Grinder -->
+                    <div class="product-card"
+                         data-id="prod-3"
+                         data-category="grinders"
+                         data-stock="in"
+                         data-name="LIT Metallic Herb Grinder"
+                         data-price="24.99"
+                         data-price-label="$24.99 / unit"
+                         data-img="images/images (1).jpeg"
+                         data-desc="Heavy-duty anodized gunmetal 4-piece aluminum grinder with diamond-cut teeth, magnetic lid, and pollen catcher.">
+                        <div class="product-img-wrap">
+                            <img src="images/images (1).jpeg" alt="LIT Metallic Herb Grinder">
+                            <span class="stock-badge in-stock">● ON STOCK</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-price">$24.99 <span>/ unit</span></div>
+                            <h3>LIT Metallic Herb Grinder</h3>
+                            <p class="product-desc">Heavy-duty anodized gunmetal 4-piece grinder with diamond-cut teeth and magnetic lid.</p>
+                            <button class="btn-primary btn-cart-add">🛒 Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4: LIT Acrylic Color Grinder -->
+                    <div class="product-card"
+                         data-id="prod-4"
+                         data-category="grinders"
+                         data-stock="out"
+                         data-name="LIT Acrylic Color Grinder"
+                         data-price="9.50"
+                         data-price-label="$9.50 / unit"
+                         data-img="images/images (2).jpeg"
+                         data-desc="Lightweight 3-part magnetic acrylic grinder with storage compartment. Available in Coral Pink, Sky Blue, Mint Green, and Matte Black.">
+                        <div class="product-img-wrap">
+                            <img src="images/images (2).jpeg" alt="LIT Acrylic Color Grinder">
+                            <span class="stock-badge out-of-stock">✕ OUT OF STOCK</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-price">$9.50 <span>/ unit</span></div>
+                            <h3>LIT Acrylic Color Grinder</h3>
+                            <p class="product-desc">Lightweight 3-part magnetic acrylic grinder with built-in stash compartment.</p>
+                            <button class="btn-primary btn-cart-add" disabled>Out of Stock</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5: Smoking Red Regular Papers -->
+                    <div class="product-card"
+                         data-id="prod-5"
+                         data-category="papers"
+                         data-stock="in"
+                         data-name="Smoking Red Regular"
+                         data-price="2.50"
+                         data-price-label="$2.50 / booklet"
+                         data-img="images/images (3).jpeg"
+                         data-desc="Medium-weight, slow-burning regular rolling papers with 100% natural vegetable gum. 60 leaves per booklet.">
+                        <div class="product-img-wrap">
+                            <img src="images/images (3).jpeg" alt="Smoking Red Regular">
+                            <span class="stock-badge in-stock">● ON STOCK</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-price">$2.50 <span>/ booklet</span></div>
+                            <h3>Smoking Red Regular</h3>
+                            <p class="product-desc">Medium-weight slow-burning regular papers with natural gum. 60 leaves per booklet.</p>
+                            <button class="btn-primary btn-cart-add">🛒 Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6: BROS Super Brown Unbleached -->
+                    <div class="product-card"
+                         data-id="prod-6"
+                         data-category="papers"
+                         data-stock="in"
+                         data-name="BROS Super Brown Papers"
+                         data-price="3.50"
+                         data-price-label="$3.50 / pack"
+                         data-img="images/images (4).jpeg"
+                         data-desc="Ultra-thin unbleached natural brown rolling papers. 100 leaves per booklet for a clean, additive-free session.">
+                        <div class="product-img-wrap">
+                            <img src="images/images (4).jpeg" alt="BROS Super Brown Papers">
+                            <span class="stock-badge in-stock">● ON STOCK</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-price">$3.50 <span>/ pack</span></div>
+                            <h3>BROS Super Brown Papers</h3>
+                            <p class="product-desc">Ultra-thin unbleached natural brown papers. 100 leaves per pack for a clean burn.</p>
+                            <button class="btn-primary btn-cart-add">🛒 Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 7: Alien Puff Bio Filter Tips -->
+                    <div class="product-card"
+                         data-id="prod-7"
+                         data-category="papers"
+                         data-stock="in"
+                         data-name="Alien Puff Bio Filter Tips"
+                         data-price="3.00"
+                         data-price-label="$3.00 / booklet"
+                         data-img="images/images (5).jpeg"
+                         data-desc="GMO-free, 100% biodegradable eco-friendly black roach tips in a sleek matte black & gold magnetic booklet.">
+                        <div class="product-img-wrap">
+                            <img src="images/images (5).jpeg" alt="Alien Puff Bio Filter Tips">
+                            <span class="stock-badge in-stock">● ON STOCK</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-price">$3.00 <span>/ booklet</span></div>
+                            <h3>Alien Puff Bio Filter Tips</h3>
+                            <p class="product-desc">GMO-free, 100% biodegradable eco-friendly black filter tips in sleek gold-foil pack.</p>
+                            <button class="btn-primary btn-cart-add">🛒 Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 8: 10-Pack Artisan Pre-Rolls -->
+                    <div class="product-card"
+                         data-id="prod-8"
+                         data-category="prerolls"
+                         data-stock="in"
+                         data-name="Artisan 10-Pack Pre-Rolls"
+                         data-price="65.00"
+                         data-price-label="$65.00 / 10-pack"
+                         data-img="images/images (7).jpeg"
+                         data-desc="Bundle of 10 slow-burning unbleached cones filled with indoor-grown flower and hand-twisted tops.">
+                        <div class="product-img-wrap">
+                            <img src="images/images (7).jpeg" alt="Artisan 10-Pack Pre-Rolls">
+                            <span class="stock-badge in-stock">● ON STOCK</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-price">$65.00 <span>/ 10-pack</span></div>
+                            <h3>Artisan 10-Pack Pre-Rolls</h3>
+                            <p class="product-desc">Bundle of 10 slow-burning unbleached cones packed with indoor-grown flower.</p>
+                            <button class="btn-primary btn-cart-add">🛒 Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 9: Ground Hybrid Flower & Cones -->
+                    <div class="product-card"
+                         data-id="prod-9"
+                         data-category="prerolls"
+                         data-stock="out"
+                         data-name="Select Hybrid Flower + 5 Cones"
+                         data-price="45.00"
+                         data-price-label="$45.00 / combo"
+                         data-img="images/images (6).jpeg"
+                         data-desc="Freshly milled hybrid flower paired with 5 ready-to-smoke open-end pre-rolled cones.">
+                        <div class="product-img-wrap">
+                            <img src="images/images (6).jpeg" alt="Select Hybrid Flower + 5 Cones">
+                            <span class="stock-badge out-of-stock">✕ OUT OF STOCK</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-price">$45.00 <span>/ combo</span></div>
+                            <h3>Select Hybrid Flower + 5 Cones</h3>
+                            <p class="product-desc">Freshly milled hybrid flower paired with 5 ready-to-smoke pre-rolled cones.</p>
+                            <button class="btn-primary btn-cart-add" disabled>Out of Stock</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 10: Clean Lines Smooth Cones -->
+                    <div class="product-card"
+                         data-id="prod-10"
+                         data-category="prerolls"
+                         data-stock="in"
+                         data-name="Clean Lines Smooth Finish Cones"
+                         data-price="15.00"
+                         data-price-label="$15.00 / 3-pack"
+                         data-img="images/images (8).jpeg"
+                         data-desc="Precision-rolled cones engineered for clean lines, smooth airflow, and zero canoeing.">
+                        <div class="product-img-wrap">
+                            <img src="images/images (8).jpeg" alt="Clean Lines Smooth Finish Cones">
+                            <span class="stock-badge in-stock">● ON STOCK</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-price">$15.00 <span>/ 3-pack</span></div>
+                            <h3>Clean Lines Smooth Cones</h3>
+                            <p class="product-desc">Precision-rolled cones engineered for clean lines, smooth finish, and even burn.</p>
+                            <button class="btn-primary btn-cart-add">🛒 Add to Cart</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p id="noResults" class="no-results" style="display: none;">No products match your filter or search.</p>
+            </div>
+
+            <!-- Card 3: Social & Contact Links -->
+            <div class="card full-width">
+                <div class="card-header">
+                    <h2>03. What's On Block</h2>
+                    <p>Get in touch with Elton City management on our social channels:</p>
+                </div>
+                
+                <div class="social-grid">
+                    <a href="https://wa.me/1234567890" target="_blank" class="social-btn whatsapp">
+                        <span class="label">WhatsApp</span>
+                        <span class="handle">#marx5252</span>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-btn facebook">
+                        <span class="label">Facebook</span>
+                        <span class="handle">@facebook.com</span>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-btn instagram">
+                        <span class="label">Instagram</span>
+                        <span class="handle">@instagram.com</span>
+                    </a>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Product Quick-View Modal -->
+    <div id="productModal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-card">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+            <img id="modalImg" src="" alt="Product Preview" class="modal-product-img">
+            <div class="modal-header">
+                <span id="modalStockBadge" class="stock-badge">ON STOCK</span>
+                <div id="modalPrice" class="product-price" style="margin-top: 0.5rem;">$0.00</div>
+                <h2 id="modalTitle">Product Name</h2>
+            </div>
+            <div class="modal-body">
+                <p id="modalDesc" style="margin: 1rem 0 1.5rem;">Description...</p>
+                <button id="modalAddCartBtn" class="btn-primary btn-block">🛒 Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide-Out Shopping Cart Drawer -->
+    <div id="cartOverlay" class="cart-overlay">
+        <aside class="cart-drawer">
+            <div class="cart-header">
+                <h2>🛒 Your Cart</h2>
+                <button id="cartCloseBtn" class="modal-close" style="position: static;">&times;</button>
+            </div>
+            <div id="cartItemsList" class="cart-items-list">
+                <p class="no-results">Your cart is empty.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total-row">
+                    <span>Total:</span>
+                    <strong id="cartTotal">$0.00</strong>
+                </div>
+                <button id="checkoutBtn" class="btn-primary btn-block">Order via WhatsApp</button>
+            </div>
+        </aside>
+    </div>
+    
+        <!-- Fixed Lower Cart Bar -->
+    <div class="lower-cart-bar">
+        <div class="lower-cart-summary">
+            <span class="lower-cart-label">Cart Total</span>
+            <strong id="lowerCartTotal">$0.00</strong>
+        </div>
+        <button id="cartToggleBtn" class="btn-primary lower-cart-btn">
+            🛒 View Cart (<span id="cartCount">0</span>)
+        </button>
+    </div>
+
+    
+
+    <script src="elton .js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Elton City Hub</title>
+    <link rel="stylesheet" href="elton .css">
+    <!-- Google Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Ambient Glow Background -->
+    <div class="bg-blur"></div>
+
+    <div class="container auth-container">
+        
+        <!-- Optional Guest Bypass -->
+        <a href="elton.html" class="back-link">
+            <span>&larr;</span> Continue as Guest
+        </a>
+
+        <!-- Form Card -->
+        <div class="card auth-card">
+            
+            <div class="card-header auth-header">
+                <span class="badge">Member Access</span>
+                <h2>Welcome Back</h2>
+                <p>Sign in to access your Elton City Hub account.</p>
+            </div>
+
+            <form id="loginForm" class="auth-form" novalidate>
+                
+                <!-- Email or Phone -->
+                <div class="form-group">
+                    <label for="loginIdentifier">WhatsApp Number / Email</label>
+                    <input type="text" id="loginIdentifier" placeholder="e.g. +1 234 567 890 or alex@example.com" required>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+
+                <!-- Remember Me & Forgot Link -->
+                <div class="form-group row-between">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        Remember Me
+                    </label>
+                    <a href="#" class="forgot-pass">Forgot Password?</a>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-primary btn-block">Log In</button>
+                
+                <!-- Feedback Messages -->
+                <div id="loginSuccess" class="success-msg" style="display: none;">
+                    ✓ Login successful! Redirecting to Hub...
+                </div>
+                <div id="loginError" class="error-msg" style="display: none; text-align: center;">
+                    Please enter your login details.
+                </div>
+            </form>
+
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="elton_signup.html">Sign up here</a></p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Login Authentication Script -->
+    <script src="elton_login.js"></script>
+</body>
+</html>

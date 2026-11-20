@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Elton City Hub</title>
+    <link rel="stylesheet" href="elton .css">
+    <!-- Google Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Ambient Glow Background -->
+    <div class="bg-blur"></div>
+
+    <div class="container auth-container">
+        
+        <!-- Top Back Link -->
+        <a href="elton.html" class="back-link">
+            <span>&larr;</span> Back to Hub
+        </a>
+
+        <!-- Form Card Container -->
+        <div class="card auth-card">
+            
+            <div class="card-header auth-header">
+                <span class="badge">Membership</span>
+                <h2>Become Part of Elton City</h2>
+                <p>Create your account to unlock exclusive access and updates.</p>
+            </div>
+
+            <form id="signupForm" class="auth-form" novalidate>
+                
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="e.g. Alex Mercer" required>
+                </div>
+
+                <!-- Email or Phone -->
+                <div class="form-group">
+                    <label for="contactInfo">WhatsApp Number / Email</label>
+                    <input type="text" id="contactInfo" placeholder="e.g. +1 234 567 890 or alex@example.com" required>
+                </div>
+
+                <!-- Preferred Category Dropdown -->
+                <div class="form-group">
+                    <label for="preference">Preferred Category</label>
+                    <select id="preference" required>
+                        <option value="" disabled selected>Select your preference...</option>
+                        <option value="indica">Indica</option>
+                        <option value="sativa">Sativa</option>
+                        <option value="hybrid">Hybrid</option>
+                        <option value="premium">Premium Line</option>
+                    </select>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="At least 6 characters" required minlength="6">
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
+                    <span id="passwordError" class="error-msg" style="display: none;">Passwords do not match.</span>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="form-group checkbox-group">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <span class="checkmark"></span>
+                        I agree to the Elton City Terms & Membership Rules
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-primary btn-block">Complete Registration</button>
+                
+                <!-- Form Feedback Message -->
+                <div id="formSuccess" class="success-msg" style="display: none;">
+                    🎉 Welcome to Elton City! Redirecting to hub...
+                </div>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already a member? <a href="elton_login.html">Log in here</a></p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Sign-up Validation Script -->
+    <script src="elton_signup.js"></script>
+</body>
+</html>
